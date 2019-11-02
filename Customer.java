@@ -18,5 +18,9 @@ class Customer
     return custName;
 
   }
+    public void getCustomer()
+    {
+      
+    }
 }
 //just for sample purpose 
