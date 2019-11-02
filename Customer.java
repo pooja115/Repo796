@@ -8,8 +8,9 @@ class Customer
     int a=1;
     return a;
   }
-  public setcustId()
+  public setcustId(int  custId)
   {
+    custId=this. custId;
   }
 }
 //just for sample purpose 
