@@ -18,9 +18,14 @@ class Customer
     return custName;
 
   }
+
     public void getCustomer()
     {
       
     }
+  public void show Customer()
+  {
+  }
+
 }
 //just for sample purpose 
