@@ -27,5 +27,10 @@ class Customer
   {
   }
 
+public void Customer()
+{
+}
+
 }
 //just for sample purpose 
+ 
