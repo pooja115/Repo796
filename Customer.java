@@ -12,5 +12,8 @@ class Customer
   {
     return custName;
   }
+  public void show Customer()
+  {
+  }
 }
 //just for sample purpose 
