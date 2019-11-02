@@ -8,5 +8,9 @@ class Customer
     int a=1;
     return a;
   }
+  public String getcustName()
+  {
+    return custName;
+  }
 }
 //just for sample purpose 
