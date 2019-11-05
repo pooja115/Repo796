@@ -41,18 +41,18 @@ public class EmployeeServlet extends HttpServlet {
 //		e.setEmpName(request.getParameter("txtEmpname"));
 //		out.println("ID:" +e.getEmpId()+"Name : "+e.getEmpName());
 		
-		out.println("ID:" +eid+"Name : "+ename);
-		InputStream is =getClass().getClassLoader().getResourceAsStream("config.properties");
-		Properties prop=new Properties();
-			prop.load(is);	
-			String driver=(String)prop.get("db.driver");
-			String url=(String)prop.get("db.url");
-			String user=(String)prop.get("db.user");
-			String pass=(String)prop.get("db. pass");
+		    out.println("ID:" +eid+"Name : "+ename);
+		//    InputStream is =getClass().getClassLoader().getResourceAsStream("config.properties");
+		//    Properties prop=new Properties();
+		//	prop.load(is);	
+//			String driver=(String)prop.get("db.driver");
+//			String url=(String)prop.get("db.url");
+//			String user=(String)prop.get("db.user");
+//			String pass=(String)prop.get("db. pass");
 			
 		try {
-			Class.forName(driver);
-			Connection conn = DriverManager.getConnection(url,user,pass);
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","hr","hr");
 			out.println("connection");
 			PreparedStatement ps = conn.prepareStatement("insert into emp_data values(?,?)");
 			ps.setInt(1,eid);
@@ -62,7 +62,7 @@ public class EmployeeServlet extends HttpServlet {
 //			stmt.executeQuery("insert into emp_data values ("+e.getEmpId()+","+e.getEmpName()+")");
 			out.println("Successfully done");
 			conn.close();
-				out.close();
+		    out.close();
 		}
 		catch(Exception e)
 		{
